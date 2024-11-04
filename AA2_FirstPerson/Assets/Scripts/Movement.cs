@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;         
+    public float air = 5f;         
     public float jumpForce = 5f;          
     public LayerMask groundLayer;         
     public float raycastLength = 1.1f;    
@@ -26,6 +27,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 Jump();
             }
+        }
+        if (!isGrounded)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector3 moveDirection = (transform.forward * moveVertical + transform.right * moveHorizontal).normalized * air;
+            rb.MovePosition(transform.position + moveDirection * moveSpeed * Time.deltaTime * air) ;
         }
     }
 
