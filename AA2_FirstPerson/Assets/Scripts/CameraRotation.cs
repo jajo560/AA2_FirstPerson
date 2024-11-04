@@ -6,10 +6,10 @@ public class CameraRotation : MonoBehaviour
 {
     public GameObject torreta;
     public GameObject troncoTorreta;
-    private float rotation_y = 0;
-    private float rotation_x = 0;
-    private float rotation_x2 = 0;
-    private float rotation_y2 = 0;
+    private float rotation_y = 0f;
+    private float rotation_x = 0f;
+    private float rotation_x2 = 0f;
+    private float rotation_y2 = 0f;
     public float sensibility_X;
     public float sensibility_Y;
     public float maxRotationY = 45.0f;
